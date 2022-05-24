@@ -5,8 +5,20 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating as R} from "./components/Rating/Rating";
 
 
+type PageTitlePropsType ={
+    title:string
+}
 
-function App() {
+function PageTitle(props:PageTitlePropsType){
+    return <h1>{props.title}</h1>
+}
+
+
+export default App;
+
+
+
+function App(props:any) {
     console.log("App rendering")
 
     return (
@@ -16,8 +28,8 @@ function App() {
             <PageTitle title = {'My friends'}/>
             Article1
             <R value={3}/>
-            <Accordion title = {"accordoin1"}/>
-            <Accordion title = {"accordoin2"}/>
+            <Accordion titleValue = {"Menu"}/>
+            <Accordion titleValue = {"Users"}/>
             Article1
             <R value={0}/>
             <R value={1}/>
@@ -29,9 +41,4 @@ function App() {
         </div>
     );
 }
-function PageTitle(props:any){
-    return <h1>{props.title}</h1>
-}
 
-
-export default App;
